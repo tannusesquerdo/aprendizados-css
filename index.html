@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Zero Inbox Animation</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/animate.css"> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery.flatshadow.js"></script>
+</head>
+<body>
+<div class="background">
+  <div class="fadeInLeftSun">
+      <div class="sun rotateIn">
+        <div class="triangle-up"></div>
+        <div class="triangle-down"></div>
+        <div class="triangle-left"></div>
+        <div class="triangle-right"></div>
+        <div class="triangle-topleft"></div>
+        <div class="triangle-topright"></div>
+        <div class="triangle-bottomleft"></div>
+        <div class="triangle-bottomright"></div>
+      </div>
+    <div class="circle"></div>
+    <div data-angle="SE" class="cloud-shadow fadeInLeftShadow flat-icon"></div>
+    <div class="clouds bounceIn">
+      <div class="cloud-1"></div>
+      <div class="cloud-2"></div>
+      <div class="cloud-3"></div>
+      <div class="cloud-4"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('.clouds').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+      $(".cloud-1").removeClass('opacity');
+      $(".cloud-2").removeClass('opacity');
+      $(".cloud-3").removeClass('opacity');
+      $(".cloud-4").removeClass('opacity');
+      $(".cloud-shadow").removeClass('opacity');
+    })
+      $(".cloud-1").addClass('opacity');
+      $(".cloud-2").addClass('opacity');
+      $(".cloud-3").addClass('opacity');
+      $(".cloud-4").addClass('opacity');
+      $(".cloud-shadow").addClass('opacity');
+
+  $(".flat-icon").flatshadow({
+    fade: false ,
+        boxShadow: "#FFCC33",
+        textShadow: false
+  });
+</script>
+</body>
+</html>
