@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="background">
+  <div class="circleIntro zoomIn"></div>
   <div class="fadeInLeftSun">
       <div class="sun rotateIn">
         <div class="triangle-up"></div>
@@ -22,11 +23,11 @@
       </div>
     <div class="circle"></div>
     <div data-angle="SE" class="cloud-shadow fadeInLeftShadow flat-icon"></div>
-    <div class="clouds bounceIn">
-      <div class="cloud-1"></div>
-      <div class="cloud-2"></div>
-      <div class="cloud-3"></div>
-      <div class="cloud-4"></div>
+    <div class="clouds">
+      <div class="cloud-1 fadeInLeftCloud1"></div>
+      <div class="cloud-2 fadeInLeftCloud2"></div>
+      <div class="cloud-3 fadeInLeftCloud3"></div>
+      <div class="cloud-4 fadeInLeftCloud4"></div>
     </div>
   </div>
 </div>
@@ -37,12 +38,19 @@
       $(".cloud-3").removeClass('opacity');
       $(".cloud-4").removeClass('opacity');
       $(".cloud-shadow").removeClass('opacity');
+      $(".circleIntro").addClass('opacity');
     })
       $(".cloud-1").addClass('opacity');
       $(".cloud-2").addClass('opacity');
       $(".cloud-3").addClass('opacity');
       $(".cloud-4").addClass('opacity');
       $(".cloud-shadow").addClass('opacity');
+      $(".circleIntro").removeClass('opacity');
+
+  $('.circleIntro').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+      $(".circleIntro").addClass('opacity');
+    })
+      $(".circleIntro").removeClass('opacity');
 
   $(".flat-icon").flatshadow({
     fade: false ,
